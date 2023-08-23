@@ -1,0 +1,143 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(http://www.tetragrand.com/images/GreenPlanet_elevation.png);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+header h1 {
+    margin: auto 0;
+    padding: 20px;
+}
+
+/* Style the hamburger icon */
+#hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    margin: auto 0;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#hamburger-icon div {
+    height: 3px;
+    background-color: white;
+    transition: transform 0.5s ease;
+
+}
+
+#hamburger-icon.open div:first-child {
+    transform: translateY(8px) rotate(45deg);
+
+}
+
+#hamburger-icon.open div:nth-child(2) {
+    opacity: 0;
+
+}
+
+#hamburger-icon.open div:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+
+}
+
+/* Style the navigation menu */
+#nav-menu {
+    position: absolute;
+    top: calc(70px + 1em);
+    left: calc(2em);
+    background-color: #4CAF50;
+    display: none;
+    z-index: 1;
+    transition: max-height 0.5s ease;
+
+}
+
+#nav-menu.open {
+    display: block;
+    max-height: 500px;
+
+}
+
+#nav-menu a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#nav-menu a:hover {
+    background-color: #3e8e41;
+}
+
+/* Style the selected navigation link */
+#nav-menu a.selected {
+    color: #4CAF50;
+}
+
+#content {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+#announcements-panel {
+    position: fixed;
+    top: calc(70px + 1em);
+    right: calc(2em);
+    width: calc(300px - 4em);
+    max-height: calc(100% - (70px + 2em));
+    overflow-y: scroll;
+    background-color: #f9f9f9;
+
+}
+
+#announcements-panel h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+#announcements-panel ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+}
+
+#announcements-panel ul li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.sub-article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f9f9f9;
+    box-shadow: -5px -5px 15px #fff, 5px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(50% -20px);
+}
+
+@media screen and (max-width :600px) {
+    .card {
+        flex-basis: 100%;
+    }
+}
